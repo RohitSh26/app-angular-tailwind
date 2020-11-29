@@ -1,14 +1,27 @@
-<div class="max-w-lg mx-auto rounded overflow-hidden shadow-lg px-8 py-12">
+<div class="flex flex-col h-screen">
   <div class="text-4xl font-light capitalize">
     {{title}}
   </div>
-  <div>
+  <div class="bg-blue-500 flex-1 flex overflow-y-hidden">
+    <div class="sidebar bg-red-500 w-48 flex-none flex flex-col justify-between">
+      <div>
+        <a routerLink='/dashboard'>Home</a>
+        <a routerLink='/heroes'>Heroes</a>
+        <a routerLink='/dashboard'>Dashboard</a>
+      </div>
+      <div class="overflow-y-auto ">
+        <a routerLink='/dashboard'>Dashboard</a>
+      </div>
+      <div>
+        <a routerLink='/heroes'>Heroes</a>
+      </div>
 
-    <app-heroes></app-heroes>
-
+    </div>
+    <div class="content-area bg-red-300 flex-1 overflow-y-auto">
+      <router-outlet></router-outlet>
+    </div>
   </div>
-  <div>
+  <div class="bg-blue-300">
     <app-messages></app-messages>
   </div>
 </div>
-
