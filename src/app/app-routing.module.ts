@@ -1,3 +1,4 @@
+import { HelpComponent } from './help/help.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -7,7 +8,8 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {path: 'dashboard', component: DashboardComponent},
-  {path: 'heroes', component: HeroesComponent}
+  {path: 'heroes', component: HeroesComponent},
+  {path: 'help', component: HelpComponent}
 ];
 
 @NgModule({

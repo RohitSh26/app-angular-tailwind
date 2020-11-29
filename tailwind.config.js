@@ -26,6 +26,9 @@ module.exports = {
       indigo: colors.indigo,
       purple: colors.violet,
       pink: colors.pink,
+      'gray-sidebar': '#121212',
+      'gray-content': '#181818',
+      'gray-botom': '#282828'
     },
     spacing: {
       px: '1px',
@@ -426,6 +429,7 @@ module.exports = {
       normal: '1.5',
       relaxed: '1.625',
       loose: '2',
+      'extra-loose': '2.5',
       3: '.75rem',
       4: '1rem',
       5: '1.25rem',

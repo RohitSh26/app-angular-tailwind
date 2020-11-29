@@ -2,26 +2,85 @@
   <div class="text-4xl font-light capitalize">
     {{title}}
   </div>
-  <div class="bg-blue-500 flex-1 flex overflow-y-hidden">
-    <div class="sidebar bg-red-500 w-48 flex-none flex flex-col justify-between">
-      <div>
-        <a routerLink='/dashboard'>Home</a>
-        <a routerLink='/heroes'>Heroes</a>
-        <a routerLink='/dashboard'>Dashboard</a>
+  <div class="flex-1 flex overflow-y-hidden text-gray-500">
+    <div class="sidebar bg-gray-sidebar w-48 flex-none flex flex-col justify-between font-semibold">
+      <!-- Sidebar Top -->
+      <ul class="py-6">
+        <li class="border-l-4 border-purple-500">
+          <a routerLink='/dashboard' class="flex items-center mx-4 mt-4">
+            <span class="text-white">
+              <fa-icon [icon]="faHome"></fa-icon>
+            </span>
+            <span class="ml-2 text-white">Home</span>
+          </a>
+        </li>
+        <li class="border-l-4 border-transparent">
+          <a routerLink='/heroes' class="flex items-center mx-4 mt-4">
+            <span class="text-white">
+              <fa-icon [icon]="faUserFriends"></fa-icon>
+            </span>
+            <span class="ml-2 text-white">Heroes</span>
+          </a>
+        </li>
+        <li class="border-l-4 border-transparent">
+          <a routerLink='/dashboard' class="flex items-center mx-4 mt-4">
+            <span class="text-white">
+              <fa-icon [icon]="faChessBoard"></fa-icon>
+            </span>
+            <span class="ml-2 text-white">Dashboard</span>
+          </a>
+        </li>
+      </ul>
+      <!-- Sidebar center -->
+      <div class="overflow-y-auto sidebar-app px-5 mt-2 ">
+        <h3 class="borter-t border-gray-800  uppercase tracking-widest">Your Heroes</h3>
+        <ul class="leading-extra-loose">
+          <li class="trucate"><a class="hover:text-white" routerLink='/'>Home</a></li>
+          <li class="trucate"><a class="hover:text-white" routerLink='/heroes'>Heroes</a></li>
+          <li class="trucate"><a class="hover:text-white" routerLink='/dashboard'>Dashboard</a></li>
+          <li class="trucate"><a class="hover:text-white" routerLink='/dashboard'>Go</a></li>
+        </ul>
+
       </div>
-      <div class="overflow-y-auto ">
-        <a routerLink='/dashboard'>Dashboard</a>
-      </div>
-      <div>
-        <a routerLink='/heroes'>Heroes</a>
+      <!-- Sidebar bottom -->
+      <div class="border-t border-gray-800 h-16 px-4 py-2 flex items-center group">
+        <a routerLink='/help'>
+          <span class="fill-current text-gray-600 w-8 h-8 group-hover:text-white">
+            <fa-icon [icon]="faInfoCircle"></fa-icon>
+          </span>
+          <span class="font-normal text-gray-500 group-hover:text-white ml-2">Help</span>
+        </a>
       </div>
 
     </div>
-    <div class="content-area bg-red-300 flex-1 overflow-y-auto">
+
+    <div class="content-area bg-gray-content flex-1 overflow-y-auto content-app">
       <router-outlet></router-outlet>
     </div>
   </div>
-  <div class="bg-blue-300">
+  <div class="bg-gray-botom">
     <app-messages></app-messages>
   </div>
 </div>
+
+<style>
+  .sidebar-app::-webkit-scrollbar {
+    width: 8px;
+    background-color: #535353;
+  }
+
+  .sidebar-app::-webkit-scrollbar-button {
+    width: 8px;
+    background-color: #535353;
+  }
+
+  .sidebar-app::-webkit-scrollbar-button {
+    width: 8px;
+    background-color: #181818;
+  }
+
+  .content-app::-webkit-scrollbar {
+    width: 8px;
+    background-color: #535353;
+  }
+</style>
